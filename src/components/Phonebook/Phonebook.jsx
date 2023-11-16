@@ -20,7 +20,6 @@ const Phonebook = () => {
   });
 
   useEffect(() => {
-    // Se apelează atunci când componenta este montată (echivalent cu componentDidMount în clase)
     const storedContacts = localStorage.getItem('contacts');
     if (storedContacts) {
       setState(prevState => ({
@@ -28,12 +27,11 @@ const Phonebook = () => {
         contacts: JSON.parse(storedContacts),
       }));
     }
-  }, []); // [] asigură că aceasta se apelează doar la montare
+  }, []);
 
   useEffect(() => {
-    // Se apelează atunci când state.contacts se modifică (echivalent cu componentDidUpdate în clase)
     localStorage.setItem('contacts', JSON.stringify(state.contacts));
-  }, [state.contacts]); // Se apelează doar când state.contacts se modifică
+  }, [state.contacts]);
 
   const handleChange = e => {
     setState({
@@ -47,7 +45,6 @@ const Phonebook = () => {
 
     const { name, number, contacts } = state;
 
-    // Verificăm dacă numele există deja în contacte
     const nameExists = contacts.some(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
