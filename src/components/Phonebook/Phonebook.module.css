@@ -43,9 +43,3 @@ li {
   justify-content: space-between;
   margin-bottom: 5px;
 }
-li-a {
-  align-items: first baseline;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 5px;
-}
