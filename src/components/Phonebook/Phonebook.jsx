@@ -30,7 +30,9 @@ const Phonebook = () => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(state.contacts));
+    return () => {
+      localStorage.setItem('contacts', JSON.stringify(state.contacts));
+    };
   }, [state.contacts]);
 
   const handleChange = e => {

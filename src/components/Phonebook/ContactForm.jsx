@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Phonebook.module.css';
 
 const ContactForm = ({ name, number, handleChange, handleSubmit }) => {
+  // Simularea componentDidMount
+  useEffect(() => {
+    console.log('ContactForm component is mounted.');
+
+    // Simularea componentWillUnmount
+    return () => {
+      console.log('ContactForm component will unmount.');
+    };
+  }, []);
+
   return (
     <form onSubmit={handleSubmit} className="contact-form">
       <div className="form-group">
